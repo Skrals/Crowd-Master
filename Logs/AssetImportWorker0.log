@@ -1,0 +1,147 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.9f1 (108be757e447) revision 1084391'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 18363.1500; Version 1909; 64bit' Language: 'ru' Physical Memory: 16318 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Unity proj/Crowd Master
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+1034
+Successfully changed project path to: D:/Unity proj/Crowd Master
+D:/Unity proj/Crowd Master
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 18.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.9f1 (108be757e447)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity proj/Crowd Master/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Radeon RX 580 Series (ID=0x67df)
+    Vendor:   
+    VRAM:     8171 MB
+    Driver:   27.20.14501.18003
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56928
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002306 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 19.23 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.693 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000380 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.686 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.17 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1129 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 59.3 MB.
+System memory in use after: 59.3 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1570.
+Total: 1.332400 ms (FindLiveObjects: 0.087300 ms CreateObjectMapping: 0.024500 ms MarkObjects: 1.161000 ms  DeleteObjects: 0.059000 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Packages
+  artifactKey: Guid(48db63db059f1ee4389d949c1d761f5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages using Guid(48db63db059f1ee4389d949c1d761f5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53a4eef707f3463af62c477a9a7c4262') in 0.002491 seconds
+  Import took 0.003723 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 407.322705 seconds.
+  path: Assets/Packages/Skybox add-on/Skybox add-on ReadMe.pdf
+  artifactKey: Guid(3f54cad5ac04a4abc8d00a71d9b45d4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/Skybox add-on/Skybox add-on ReadMe.pdf using Guid(3f54cad5ac04a4abc8d00a71d9b45d4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b8402a7e985b0d865b8b500cee6457e') in 0.025073 seconds
+  Import took 0.026745 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 30.181880 seconds.
+  path: Assets/Scripts
+  artifactKey: Guid(1565ca97ae2edee4ab168e11a875fa11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts using Guid(1565ca97ae2edee4ab168e11a875fa11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7b2e9d491584888dc2cbf80f7dac1eb') in 0.001043 seconds
+  Import took 0.002563 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.686645 seconds.
+  path: Assets/Packages/Shurikens pack/Demo Scene/Demo/LightingData.asset
+  artifactKey: Guid(2c1b4471522723842b398b3c5ad9065f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/Shurikens pack/Demo Scene/Demo/LightingData.asset using Guid(2c1b4471522723842b398b3c5ad9065f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Lighting data asset ‘LightingData’ is incompatible with the current Unity version. Please use Generate Lighting to rebuild the lighting data.  Realtime Global Illumination cannot be used until the lighting data is rebuilt.
+
+ -> (artifact id: '1a1bc8597514310a83275f9b473ebdfc') in 0.004328 seconds
+  Import took 0.005712 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/Packages/Shurikens pack/Demo Scene/Demo/ReflectionProbe-1.exr
+  artifactKey: Guid(238915d1826c9dc45bffa0f04ffe1134) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/Shurikens pack/Demo Scene/Demo/ReflectionProbe-1.exr using Guid(238915d1826c9dc45bffa0f04ffe1134) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c4a7ef89ff10162650411773e2f7b2e') in 0.091796 seconds
+  Import took 0.093257 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Packages/Shurikens pack/Demo Scene/Demo/LightingData.asset
+  artifactKey: Guid(2c1b4471522723842b398b3c5ad9065f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/Shurikens pack/Demo Scene/Demo/LightingData.asset using Guid(2c1b4471522723842b398b3c5ad9065f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Lighting data asset ‘LightingData’ is incompatible with the current Unity version. Please use Generate Lighting to rebuild the lighting data.  Realtime Global Illumination cannot be used until the lighting data is rebuilt.
+
+ -> (artifact id: '1a1bc8597514310a83275f9b473ebdfc') in 0.001486 seconds
+  Import took 0.002791 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/Packages/Shurikens pack/Demo Scene/Demo/ReflectionProbe-0.exr
+  artifactKey: Guid(73a20344bedad7346b297226eb4dfe63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/Shurikens pack/Demo Scene/Demo/ReflectionProbe-0.exr using Guid(73a20344bedad7346b297226eb4dfe63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22fd97124d0ec3855115892af98635a7') in 0.009113 seconds
+  Import took 0.010749 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Packages/Shurikens pack/Demo Scene/Demo/Lightmap-0_comp_light.exr
+  artifactKey: Guid(81ae756ceb356ab41bdb227103764d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/Shurikens pack/Demo Scene/Demo/Lightmap-0_comp_light.exr using Guid(81ae756ceb356ab41bdb227103764d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09531842a9a88737f9cf030a75eecb39') in 0.024868 seconds
+  Import took 0.026437 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003203 seconds.
+  path: Assets/Packages/Shurikens pack/Demo Scene/Demo/Lightmap-0_comp_light.exr
+  artifactKey: Guid(81ae756ceb356ab41bdb227103764d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Packages/Shurikens pack/Demo Scene/Demo/Lightmap-0_comp_light.exr using Guid(81ae756ceb356ab41bdb227103764d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09531842a9a88737f9cf030a75eecb39') in 0.015829 seconds
+  Import took 0.017339 seconds .
+
