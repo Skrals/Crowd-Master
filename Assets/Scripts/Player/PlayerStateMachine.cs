@@ -32,6 +32,7 @@ public class PlayerStateMachine : MonoBehaviour
         }
 
         PlayerState nextState = _currentState.GetNextState();
+
         if(nextState != null)
         {
             Transit(nextState);
