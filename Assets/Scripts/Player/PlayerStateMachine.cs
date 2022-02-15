@@ -2,17 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(Rigidbody),typeof(Animator))]
 public class PlayerStateMachine : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private PlayerState _firstState;
+
+    private PlayerState _currentState;
+    private Rigidbody _rigitbody;
+    private Animator _animator;
+
+    private void Awake()
     {
-        
+        _rigitbody = GetComponent<Rigidbody>();
+        _animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        _currentState = _firstState;
+        _currentState.Enter(_rigitbody, _animator);
+    }
+
+    private void Update()
+    {
+        if(_currentState == null)
+        {
+            return;
+        }
+
+        PlayerState nextState = _currentState.GetNextState();
+        if(nextState != null)
+        {
+            Transit(nextState);
+        }
+    }
+
+    private void Transit(PlayerState nextState)
+    {
+        if(_currentState != null)
+        {
+            _currentState.Exit();
+        }
+
+        _currentState = nextState;
+
+        if(_currentState !=null)
+        {
+            _currentState.Enter(_rigitbody, _animator);
+        }
     }
 }
