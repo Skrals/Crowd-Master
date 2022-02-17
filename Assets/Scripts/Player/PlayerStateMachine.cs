@@ -9,19 +9,19 @@ public class PlayerStateMachine : MonoBehaviour
     [SerializeField] private PlayerState _firstState;
 
     private PlayerState _currentState;
-    private Rigidbody _rigitbody;
+    private Rigidbody _rigidbody;
     private Animator _animator;
 
     private void Awake()
     {
-        _rigitbody = GetComponent<Rigidbody>();
+        _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
     }
 
     private void Start()
     {
         _currentState = _firstState;
-        _currentState.Enter(_rigitbody, _animator);
+        _currentState.Enter(_rigidbody, _animator);
     }
 
     private void Update()
@@ -50,7 +50,7 @@ public class PlayerStateMachine : MonoBehaviour
 
         if(_currentState !=null)
         {
-            _currentState.Enter(_rigitbody, _animator);
+            _currentState.Enter(_rigidbody, _animator);
         }
     }
 }
