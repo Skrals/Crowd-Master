@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(Rigidbody),typeof(Animator))]
+[RequireComponent(typeof(Rigidbody),typeof(Animator), typeof(HealthContainer))]
 public class PlayerStateMachine : MonoBehaviour
 {
     [SerializeField] private State _firstState;
@@ -11,11 +11,29 @@ public class PlayerStateMachine : MonoBehaviour
     private State _currentState;
     private Rigidbody _rigidbody;
     private Animator _animator;
+    private HealthContainer _health;
+
+    private void OnEnable()
+    {
+        _health.Died += OnDie;
+    }
+
+    private void OnDisable()
+    {
+        _health.Died -= OnDie;
+    }
+
+    private void OnDie()
+    {
+        enabled = false;
+        _animator.SetTrigger("broken");
+    }
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
+        _health = GetComponent<HealthContainer>();
     }
 
     private void Start()
@@ -52,5 +70,10 @@ public class PlayerStateMachine : MonoBehaviour
         {
             _currentState.Enter(_rigidbody, _animator);
         }
+    }
+
+    public void ApplyDamage(float damage)
+    {
+        _health.TakeDamage((int)damage);
     }
 }
