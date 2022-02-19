@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PlayerState : MonoBehaviour
+public abstract class State : MonoBehaviour
 {
     [SerializeField] private PlayerTransition[] _transitions;
 
     public Rigidbody Rigidbody { get; private set; }
-    protected Animator Animator { get; private set; }
+    public Animator Animator { get; private set; }
 
     public void Enter(Rigidbody rigidbody , Animator animator)
     {
@@ -38,7 +38,7 @@ public abstract class PlayerState : MonoBehaviour
         }
     }
 
-    public PlayerState GetNextState()
+    public State GetNextState()
     {
         foreach (var transition in _transitions)
         {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveState : PlayerState
+public class MoveState : State
 {
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private StaminaAccumulator _staminaAccumulator;
