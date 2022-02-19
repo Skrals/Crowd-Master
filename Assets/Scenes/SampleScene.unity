@@ -1315,6 +1315,8 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1380,13 +1382,46 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -13.390001, y: 6.42, z: -0.44000006}
+  m_LocalRotation: {x: 0.11561064, y: 0.6975917, z: -0.11561064, w: 0.6975917}
+  m_LocalPosition: {x: -15.8, y: 10.07, z: -0.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 18.82, y: 90, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b5121db6946d64191b2c102b138c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 7602602280272422200}
+  _speed: 100
+  _range: 5
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daafa580f74ca63478582c18ff764707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 5679851293481075597}
+  _forwardDirection: {x: 1, y: 0, z: 0}
+  _speed: 2
+  _angle: 45
+  _distance: 15
+  _maxVectorLength: 2
 --- !u!1 &983163271
 GameObject:
   m_ObjectHideFlags: 0
@@ -3233,6 +3268,7 @@ GameObject:
   - component: {fileID: 2089529500}
   - component: {fileID: 2089529504}
   - component: {fileID: 2089529498}
+  - component: {fileID: 2089529505}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -3375,6 +3411,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetState: {fileID: 1250913718}
   _attackState: {fileID: 2089529502}
+--- !u!114 &2089529505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089529495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1368ba3c6adb7b6439937a55c919f1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 70
 --- !u!1 &2089529537
 GameObject:
   m_ObjectHideFlags: 0
@@ -5422,7 +5471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &5339296450692202339
 GameObject:
   m_ObjectHideFlags: 0
@@ -5530,6 +5579,7 @@ GameObject:
   - component: {fileID: 5339296450692202369}
   - component: {fileID: 5339296450692202366}
   - component: {fileID: 5339296450692202358}
+  - component: {fileID: 5339296450692202371}
   m_Layer: 0
   m_Name: EnemyMelee
   m_TagString: Untagged
@@ -5684,7 +5734,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 50
-  _broken: {fileID: 5339296450692202360}
 --- !u!1 &5339296450692202359
 GameObject:
   m_ObjectHideFlags: 0
@@ -5861,9 +5910,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4996282808454419284442a50ac4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitions: []
+  _transitions:
+  - {fileID: 5339296450692202371}
   _attackForce: 10
   _attackDelay: 1.5
+--- !u!114 &5339296450692202371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5339296450692202349}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd46b2ce950a0be48b522d96d109f816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetState: {fileID: 5339296450692202368}
+  _minimumLostDistance: 1.2
 --- !u!4 &5339296450692293377
 Transform:
   m_ObjectHideFlags: 0
