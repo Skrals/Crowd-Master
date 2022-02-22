@@ -1,35 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody), typeof(Animator))]
-public class EnemyStateMachine : MonoBehaviour, IDamageble
+public class EnemyStateMachine : StateMachine, IDamageble
 {
     [SerializeField] private EnemyState _firstState;
     [SerializeField] private BrokenState _brokenState;
-    [SerializeField] private HealthContainer _healthContainer;
 
     private EnemyState _currentState;
-    private Rigidbody _rigidbody;
-    private Animator _animator;
+
     private float _minDamage;
 
     public PlayerStateMachine Player { get; private set; }
 
     public event UnityAction<EnemyStateMachine> Died;
 
-    private void OnEnable()
-    {
-        _healthContainer.Died += OnEnemyDie;
-    }
-
-    private void OnDisable()
-    {
-        _healthContainer.Died -= OnEnemyDie;
-    }
-
-    private void OnEnemyDie()
+    protected override void OnDie()
     {
         enabled = false;
         _rigidbody.constraints = RigidbodyConstraints.None;
@@ -38,8 +24,7 @@ public class EnemyStateMachine : MonoBehaviour, IDamageble
 
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody>();
-        _animator = GetComponent<Animator>();
+        LoadFromAwake();
         Player = FindObjectOfType<PlayerStateMachine>();
     }
 
@@ -64,7 +49,7 @@ public class EnemyStateMachine : MonoBehaviour, IDamageble
         }
     }
 
-    private void Transit(EnemyState nextState)
+    private  void Transit(EnemyState nextState)
     {
         if (_currentState != null)
         {
@@ -83,11 +68,12 @@ public class EnemyStateMachine : MonoBehaviour, IDamageble
     {
        if(force > _minDamage && _currentState !=  _brokenState)
         {
-            _healthContainer.TakeDamage((int)force);
+            _health.TakeDamage((int)force);
             Transit(_brokenState);
             _brokenState.ApplyDamage(rigidbody, force);
             return true;
         }
         return false;
     }
+
 }

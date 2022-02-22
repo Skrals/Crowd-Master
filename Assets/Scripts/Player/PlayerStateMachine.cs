@@ -1,32 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 
-[RequireComponent(typeof(Rigidbody),typeof(Animator), typeof(HealthContainer))]
-public class PlayerStateMachine : MonoBehaviour
+[RequireComponent(typeof(Rigidbody), typeof(Animator), typeof(HealthContainer))]
+public class PlayerStateMachine : StateMachine
 {
-    [SerializeField] private State _firstState;
+    [SerializeField] private PlayerState _firstState;
 
-    private State _currentState;
-    private Rigidbody _rigidbody;
-    private Animator _animator;
-    private HealthContainer _health;
+    private PlayerState _currentState;
 
     public UnityAction Damaged;
 
-    private void OnEnable()
-    {
-        _health.Died += OnDie;
-    }
-
-    private void OnDisable()
-    {
-        _health.Died -= OnDie;
-    }
-
-    private void OnDie()
+    protected override void OnDie()
     {
         enabled = false;
         _animator.SetTrigger("broken");
@@ -34,9 +19,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody>();
-        _animator = GetComponent<Animator>();
-        _health = GetComponent<HealthContainer>();
+        LoadFromAwake();
     }
 
     private void Start()
@@ -47,29 +30,29 @@ public class PlayerStateMachine : MonoBehaviour
 
     private void Update()
     {
-        if(_currentState == null)
+        if (_currentState == null)
         {
             return;
         }
 
-        State nextState = _currentState.GetNextState();
+        PlayerState nextState = _currentState.GetNextState();
 
-        if(nextState != null)
+        if (nextState != null)
         {
             Transit(nextState);
         }
     }
 
-    private void Transit(State nextState)
+    private void Transit(PlayerState nextState)
     {
-        if(_currentState != null)
+        if (_currentState != null)
         {
             _currentState.Exit();
         }
 
         _currentState = nextState;
 
-        if(_currentState !=null)
+        if (_currentState != null)
         {
             _currentState.Enter(_rigidbody, _animator);
         }

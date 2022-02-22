@@ -1,17 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyState : MonoBehaviour
+public class EnemyState : States
 {
     [SerializeField] private EnemyTransition[] _transitions;
 
-    public Rigidbody Rigidbody { get; private set; }
-
     public PlayerStateMachine Player { get; private set; }
-    public Animator Animator { get; private set; }
 
-    public void Enter(Rigidbody rigidbody, Animator animator, PlayerStateMachine player)
+    public override void Enter(Rigidbody rigidbody, Animator animator, PlayerStateMachine player)
     {
         if (enabled == false)
         {
@@ -29,7 +24,7 @@ public class EnemyState : MonoBehaviour
         }
     }
 
-    public void Exit()
+    public override void Exit()
     {
         if (enabled == true)
         {
@@ -48,7 +43,7 @@ public class EnemyState : MonoBehaviour
         {
             if (transition.NeedTransit)
             {
-                return transition.TargetState;
+                return (EnemyState)transition.TargetState;
             }
         }
         return null;

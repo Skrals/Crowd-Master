@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class State : MonoBehaviour
+public abstract class PlayerState : States
 {
     [SerializeField] private PlayerTransition[] _transitions;
-
-    public Rigidbody Rigidbody { get; private set; }
-    public Animator Animator { get; private set; }
-
-    public void Enter(Rigidbody rigidbody , Animator animator)
+    public  override void Enter(Rigidbody rigidbody , Animator animator)
     {
         if(enabled == false)
         {
@@ -25,9 +21,9 @@ public abstract class State : MonoBehaviour
         }
     }
 
-    public void Exit()
+    public override void Exit()
     {
-        if(enabled == true)
+        if (enabled == true)
         {
             foreach (var transition in _transitions)
             {
@@ -38,13 +34,13 @@ public abstract class State : MonoBehaviour
         }
     }
 
-    public State GetNextState()
+    public PlayerState GetNextState()
     {
         foreach (var transition in _transitions)
         {
             if(transition.NeedTransit)
             {
-                return transition.TargetState;
+                return (PlayerState)transition.TargetState;
             }
         }
         return null;
